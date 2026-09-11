@@ -33,9 +33,31 @@
         
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 25px;
             margin-bottom: 50px;
+        }
+        
+        @media (max-width: 600px) {
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+        
+        @media (min-width: 600px) and (max-width: 1000px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1000px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
         }
         
         .card {
@@ -59,7 +81,7 @@
         
         .card-image {
             width: 100%;
-            height: 200px;
+            height: 160px;
             background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
             display: flex;
             align-items: center;
@@ -83,12 +105,16 @@
         }
         
         .card-title {
-            font-size: 1.2em;
+            font-size: 1.1em;
             font-weight: 600;
             color: #333;
             margin-bottom: 10px;
             line-height: 1.4;
             word-break: break-word;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
         
         .card-link {
@@ -124,25 +150,25 @@
         <div class="gallery">
             <a href="pages/1.html" class="card">
                 <div class="card-image">
-                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center;"><span style="color: white; font-size: 3em;">📄</span></div>
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center;"><span style="color: white; font-size: 2.5em;">📄</span></div>
                 </div>
                 <div class="card-content">
                     <div class="card-title">秘書艦鹿島の報告書 4</div>
-                    <div class="card-link">点击查看 →</div>
+                    <div class="card-link">♥</div>
                 </div>
             </a>
             <a href="pages/2.html" class="card">
                 <div class="card-image">
-                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center;"><span style="color: white; font-size: 3em;">📄</span></div>
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center;"><span style="color: white; font-size: 2.5em;">📄</span></div>
                 </div>
                 <div class="card-content">
                     <div class="card-title">お姉ちゃんと、ママと、本気交尾</div>
-                    <div class="card-link">点击查看 →</div>
+                    <div class="card-link">♥</div>
                 </div>
             </a>
         </div>
         <footer>
-            <p>TG@BGG_Comics</p>
+            <p>TG@BGG_Home</p>
         </footer>
     </div>
 </body>
