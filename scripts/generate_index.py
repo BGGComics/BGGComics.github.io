@@ -44,7 +44,7 @@ def generate_index(pages_dir='pages'):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的静态HTML集合</title>
+    <title>TG@BGG_Comics</title>
     <style>
         * {
             margin: 0;
@@ -277,7 +277,7 @@ def generate_index(pages_dir='pages'):
     html_content += '''        </div>
         
         <div class="footer">
-            🤖 此页面由 GitHub Actions 自动生成 | 最后更新: ''' + datetime.now().strftime('%Y-%m-%d %H:%M:%S') + '''
+            🤖 此页面由 TG@BGG_Comics 自动生成 | 最后更新: ''' + datetime.now().strftime('%Y-%m-%d %H:%M:%S') + '''
         </div>
     </div>
 </body>
