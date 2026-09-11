@@ -269,8 +269,8 @@ def generate_index(pages_dir='pages'):
     else:
         html_content += '''            <div class="empty-state">
                 <div class="empty-state-icon">📂</div>
-                <h2>还没有HTML文件</h2>
-                <p>请在 pages 文件夹中添加 HTML 文件</p>
+                <h2>还没有文件</h2>
+                <p>更多精彩 TG@bgg_Comics</p>
             </div>
 '''
     
