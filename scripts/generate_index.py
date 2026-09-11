@@ -238,7 +238,7 @@ def generate_index(pages_dir='pages'):
 <body>
     <div class="container">
         <div class="header">
-            <h1>📚 我的HTML集合</h1>
+            <h1>📚 TG@BGG_Comics</h1>
             <p>点击下方任意文件即可查看</p>
             <div class="stats">
                 <div class="stat">
