@@ -239,7 +239,7 @@ def generate_index():
     </div>
 </body>
 </html>
-"""'
+'''
 
     # 写入 index.html
     with open('index.html', 'w', encoding='utf-8') as f:
