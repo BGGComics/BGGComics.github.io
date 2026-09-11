@@ -12,219 +12,129 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 40px 20px;
         }
         
         .container {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .card {
             background: white;
             border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             overflow: hidden;
-            animation: fadeIn 0.6s ease-in;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 50px 30px;
-            text-align: center;
-        }
-        
-        .header h1 {
-            font-size: 36px;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        
-        .header p {
-            font-size: 16px;
-            opacity: 0.9;
-            margin-bottom: 20px;
-        }
-        
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 20px;
-            font-size: 14px;
-        }
-        
-        .stat {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .content {
-            padding: 40px 30px;
-        }
-        
-        .empty-state {
-            text-align: center;
-            padding: 60px 20px;
-            color: #999;
-        }
-        
-        .empty-state-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        
-        .empty-state h2 {
-            font-size: 20px;
-            margin-bottom: 10px;
-            color: #666;
-        }
-        
-        .file-list {
-            display: grid;
-            gap: 12px;
-        }
-        
-        .file-item {
-            display: grid;
-            grid-template-columns: 1fr auto auto;
-            gap: 20px;
-            align-items: center;
-            padding: 16px 20px;
-            background: #f8f9fa;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             transition: all 0.3s ease;
+            cursor: pointer;
             text-decoration: none;
             color: inherit;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
         
-        .file-item:hover {
-            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
-            border-color: #667eea;
-            transform: translateX(6px);
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
         }
         
-        .file-name {
+        .card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-weight: 500;
-            color: #667eea;
-            min-width: 0;
-        }
-        
-        .file-name span:first-child {
-            font-size: 20px;
+            justify-content: center;
+            overflow: hidden;
             flex-shrink: 0;
         }
         
-        .file-name span:last-child {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
-        .file-meta {
+        .card-content {
+            padding: 20px;
+            flex: 1;
             display: flex;
-            gap: 30px;
-            font-size: 13px;
-            color: #666;
-            text-align: right;
+            flex-direction: column;
+            justify-content: space-between;
         }
         
-        .file-size {
-            min-width: 60px;
+        .card-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+            line-height: 1.4;
+            word-break: break-word;
         }
         
-        .file-date {
-            min-width: 120px;
+        .card-link {
+            color: #667eea;
+            font-size: 0.95em;
+            font-weight: 500;
+            margin-top: auto;
         }
         
-        .footer {
-            padding: 20px 30px;
-            border-top: 1px solid #e0e0e0;
-            background: #f8f9fa;
+        .empty {
             text-align: center;
-            color: #999;
-            font-size: 12px;
+            color: white;
+            font-size: 1.2em;
         }
         
-        @media (max-width: 768px) {
-            .header {
-                padding: 30px 20px;
-            }
-            
-            .header h1 {
-                font-size: 24px;
-            }
-            
-            .stats {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .content {
-                padding: 20px;
-            }
-            
-            .file-item {
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
-            
-            .file-meta {
-                flex-direction: column;
-                gap: 5px;
-                text-align: left;
-            }
-            
-            .file-size,
-            .file-date {
-                min-width: unset;
-            }
+        .empty p {
+            margin-top: 20px;
+        }
+        
+        footer {
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.95em;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>📚 TG@BGG_Comics</h1>
-            <p>点击下方任意文件即可查看</p>
-            <div class="stats">
-                <div class="stat">
-                    <span>📄</span>
-                    <span>{} 个文件</span>
+        <h1>✨TG@BGG_Comics</h1>
+        <div class="gallery">
+            <a href="pages/1.html" class="card">
+                <div class="card-image">
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center;"><span style="color: white; font-size: 3em;">📄</span></div>
                 </div>
-            </div>
+                <div class="card-content">
+                    <div class="card-title">秘書艦鹿島の報告書 4</div>
+                    <div class="card-link">点击查看 →</div>
+                </div>
+            </a>
         </div>
-        
-        <div class="content">
-            <div class="file-list">
-                <a href="pages/1.html" class="file-item">
-                    <div class="file-name">
-                        <span>📄</span>
-                        <span title="1.html">1.html</span>
-                    </div>
-                    <div class="file-meta">
-                        <div class="file-size">16.8MB</div>
-                        <div class="file-date">2026-09-11 07:22</div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        
-        <div class="footer">
-            🤖 此页面由 TG@BGG_Comics 自动生成 | 最后更新: 2026-09-11 07:22:15
-        </div>
+        <footer>
+            <p>TG@BGG_Comics</p>
+        </footer>
     </div>
 </body>
 </html>
